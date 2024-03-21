@@ -1,0 +1,107 @@
+Auteurs: Iknoor Singh Povar, Hossam Moustafa, Arnaud Grandisson et Hubert Khouzam 
+ATMEGATRON - Des robots pour la cartographie et la navigation
+
+*Description du projet:*
+Ce projet vise à la conception et la programmation de deux robots, Robot1 et Robot2, capables de collaborer pour cartographier un espace délimité et de naviguer avec précision à l'intérieur de celui-ci. Le Robot1 sera positionné initialement dans une boîte, est chargé de se positionner sur un marqueur central, de recevoir des données cartographiques de Robot2 par transmission infrarouge et d'afficher un dessin de l'espace sur un PC connecté. Ce dessin inclut la table, une boîte, des segments ajoutés par un évaluateur et la position initiale de Robot1. Le Robot2 sera placé sur un cadre pour parcourir celui-ci pour identifier et mesurer les segments de ruban ajoutés. Après, il transmet les données au Robot1. Il est muni d'un capteur de suiveur de ligne Maker Line de Cytron qui lui permet de détecter une ligne d'une certain couleur, dans notre cas la couleur noir.
+
+*Contenu du projet:*
+app1/ : Contient les fichiers source principaux pour Robot1, y compris le fichier "app1.cpp" et le "MakeFile" nécessaires pour compiler et exécuter le programme spécifique à Robot1.
+
+app2/ : Contient les fichiers source principaux pour Robot2, y compris le fichier "app2.cpp" et le "MakeFile" nécessaires pour compiler et exécuter le programme spécifique à Robot2.
+
+library/ : Contient les fichiers de la bibliothèque du projet, où résident toutes les classes et les fonctions. Il inclut les classes telles que Navigation, pour la gestion des déplacements du robot, Robot1 et Robot2, qui définissent les fonctionnalités et les comportements spécifiques à chaque robot, Timer pour le suivi temporel des actions, Speaker pour les signaux sonores et d'autres classes nécessaires au bon fonctionnement du projet.
+
+
+
+*Configuration Matérielle du Projet: *
+Branchements du Robot1:
+Il est essentiel de s'assurer que toutes les connexions soient correctement établies avant de procéder à l'utilisation du Robot1.
+
+-LED
+    Borne positive connecté au port C3
+    Borne négative connecté au port C2
+
+-Piezo (haut-parleur)
+    Fil rouge connecté au port B1
+    Fil noir connecté au port B3
+
+-Recepteur infrarouge PNA4602
+    Capteur placer sur le breadboard
+    Connecté sur le port A1
+    VCC/GND connectés sur les VCC/GND du PORTC
+
+-Capteur de distance infrarouge GP2Y0A21YK0F
+    Connecté aux ports A0
+    VCC/GND connecté au VCC/GND du PORTA
+
+-Boutton Interrupteur
+    Installé un cavalier sur IntEN et s'assurer qu'aucun branchement est sur D2
+
+-Connection pour utilisé le PWM pour les moteurs
+    Enable (E) du moteur gauche connecté au port D6
+    Enable (E) du moteur droite connecté au port D7
+    Direction (D) du moteur gauche connecté au port C6
+    Direction (D) du moteur droite connecté au port C7
+
+
+Branchements du Robot2:
+Il est essentiel de s'assurer que toutes les connexions soient correctement établies avant de procéder à l'utilisation du Robot2.
+
+-Suiveur de ligne Maker Line de Cytron
+    D1 connecté à PORT A0
+    D2 connecté à PORT A1
+    D3 connecté à PORT A2
+    D4 connecté à PORT A3
+    D5 connecté à PORT A4
+    VCC/GND connecté au VCC/GND du PORTA
+
+-LED
+    Borne positive connecté au port C3
+    Borne négative connecté au port C2
+
+-Piezo (haut-parleur)
+    Fil rouge connecté au port B1
+    Fil noir connecté au port B3
+
+-LED pour la transmission infrarouge
+    Fil rouge connecté au port D5
+    Fil noir connecté au port D4
+
+-Bouton Blanc
+    Fils du signal de sortie du breadboard connecté sur port D3 (D3 étant utilisé pour l'interruption)
+    Le deuxième fils du signal de sortie du breadboard peut se connecté sur port D0
+    Le fils rouge du breadboard est connecté sur le VCC du port C
+    Le fils noir du breadboard est connecté sur le GND du port C
+    *Le boutton blanc devra être monté à l'aide du breadboard en avant du robot*
+
+-Boutton Interrupteur
+    Installé un cavalier sur IntEN et s'assurer qu'aucun branchement est sur D2
+    
+-Connection pour utilisé le PWM pour les moteurs
+    Enable (E) du moteur gauche connecté au port D6 
+    Enable (E) du moteur droite connecté au port D7
+    Direction (D) du moteur gauche connecté au port C6
+    Direction (D) du moteur droite connecté au port C7
+
+
+
+*Configuration du projet:*
+Pour garantir le bon fonctionnement des robots ATMEGATRON lors de l'exécution du projet, suivez ces étapes
+    1- Vérifier les branchements
+    Assurez-vous que tous les branchements électriques et connexions des composants décrits dans la section "Configuration Matérielle du Projet" sont corrects. 
+
+    2- Installation des piles
+    Vérifiez que toutes les piles nécessaires (6xAA + 1x9V) sont installées sur les robots et qu'elles disposent d'une charge complète. 
+
+    3-Compilation de la librairie
+   Ouvrez un terminal, naviguez jusqu'au dossier de la librairie ('library/') et exécutez la commande 'make'. Ceci compile les différents modules de la librairie qui seront utilisés par les programmes des robots.
+
+    4-Compilation et chargement pour Robot1 et Robot2 :**
+    Naviguez vers le dossier 'app1/' et exécutez 'make install'. Cela compile le code source de Robot1 et le charge sur le microcontrôleur. Répétez cette opération pour Robot2 avec le dossier 'app2/'.
+   *IMPORTANT : Assurez-vous qu'aucun périphérique n'est connecté aux ports B pendant la compilation pour éviter les erreurs de programmation.*
+
+    5- Positionner les robots
+   Placez les robots sur le cadre conformément aux instructions spécifiques du projet. Robot1 doit être placé à l'intérieur de la boîte avec le marqueur central et Robot2 doit être positionné sur le cadre à l'emplacement de départ.
+
+
+
