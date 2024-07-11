@@ -1,5 +1,5 @@
-# Projet_Integratoire 1 - Polytechnique Montréal
-
+# Projet Integratoire 1 - Polytechnique Montréal
+ 
 Ceci est le projet final du cours de systèmes embarqués de la session Hiver 2024
 
 Créé en collaboration:
