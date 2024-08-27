@@ -1,4 +1,4 @@
-*french version will follow*
+*French version will follow*
 # Final Project 1 - Polytechnique Montreal
 
 This is the final project for the Embedded Systems course for the Winter 2024 semester.
